@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/my-blog-building-process/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/hello-world/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="余光">
@@ -261,7 +261,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/21/my-blog-building-process/" itemprop="url">my-blog-building-process</a></h1>
+                <a class="post-title-link" href="/2018/12/21/hello-world/" itemprop="url">Hello World</a></h1>
         
 
         <div class="post-meta">
@@ -273,7 +273,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-21T10:56:24+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-21T20:17:20+08:00">
                 2018-12-21
               </time>
             
@@ -283,211 +283,6 @@
             
           </span>
 
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="搭了两次blog，写下来加深印象"><a href="#搭了两次blog，写下来加深印象" class="headerlink" title="搭了两次blog，写下来加深印象"></a>搭了两次blog，写下来加深印象</h2><p>工具</p>
-<ul>
-<li>git</li>
-<li>github账号</li>
-<li>node.js</li>
-<li>hexo</li>
-</ul>
-<p>因为每个github账号都可以开一个自己的静态网站(github pages服务),简单还免费,只需要创建一个名称为username.github.io的repository。(username为你的账号名称)这个repository将储存你的blog的文件</p>
-<p>Git是一个版本工具，此处用来将你的修改推送到你的github上(需要使用SSh赋予你的电脑推送东西到github的权限)</p>
-<p>hexo博客生成工具，为什么用它，彬彬推荐的，我不懂hhh。它可以自动生成html+css+js，你不需要再去构造你blog的形状。</p>
-<p>node.js : 安装、使用hexo需要它,具体什么作用我不知道</p>
-<p>安装工具(我的系统是linux)</p>
-<ul>
-<li><p>git </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">先update </span><br><span class="line"># sudo apt-get update</span><br><span class="line">然后安装</span><br><span class="line"># apt-get install git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>node.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">附上官网链接</span><br><span class="line">https://nodejs.org/en/</span><br><span class="line">下载解压</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">安装完node.js后</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">好像是需要将npm添加到全局环境我忘了。。</span><br><span class="line">需要的话百度一下就行</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>过程<br><strong>1. 在一个方便的位置建一个文件夹装blog文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir 文件夹名称(我的是myblog，以下用它替换)</span><br></pre></td></tr></table></figure></p>
-<p><strong>2. hexo初始化</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd myblog</span><br><span class="line"></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>然后慢慢等待,完成后</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>可能不需要这步。。)</p>
-</li>
-<li><p>安装相关组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g     //生成相关html文件</span><br><span class="line">hexo s     //在本地启动服务</span><br></pre></td></tr></table></figure>
-<p>会出现一个 <a href="http://localhost:4000链接" target="_blank" rel="noopener">http://localhost:4000链接</a> ，复制后在浏览器打开，就能看到内容</p>
-<p><strong>3. 使用SSHl连接到github</strong></p>
-<blockquote>
-<p>挂上官网教程<br><a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank" rel="noopener">https://help.github.com/articles/connecting-to-github-with-ssh/</a></p>
-</blockquote>
-<p><strong>4. 将你的本地blog文件推到github上</strong></p>
-<ul>
-<li>用文本编辑器打开myblog文件下的_config.yml文件</li>
-<li>将最后的deploy:以下的改为<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/username/username.github.io.git</span><br><span class="line">  branch: master        //关于分支，我也不是很清除。就挂在主支了</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>将username改为你的github账号，保存即可</p>
-</li>
-<li><p>然后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean    //清除public文件夹中的文件</span><br><span class="line">hexo g        //生成静态文件(产生public文件夹)</span><br><span class="line">hexo d        //部署博客到远端(github)</span><br><span class="line">输入你的Github账号密码</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>建议每次推送都这样操作</p>
-</li>
-</ul>
-<p><strong>5. 浏览器中输入 username.github.io，完成</strong> </p>
-<p>还有一些配置、插件什么的，自行百度。<br><img src="http://img2.imgtn.bdimg.com/it/u=2870636485,3805452701&amp;fm=26&amp;gp=0.jpg" alt="嘻嘻嘻"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/20/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="余光">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img4.imgtn.bdimg.com/it/u=739489156,91961436&fm=26&gp=0.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ljl's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/20/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-20T21:00:42+08:00">
-                2018-12-20
-              </time>
-            
-
-            
-
-            
-          </span>
 
           
 
@@ -556,6 +351,172 @@
 </blockquote>
 
           
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/my_blog_building_process/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="余光">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img4.imgtn.bdimg.com/it/u=739489156,91961436&fm=26&gp=0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ljl's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/21/my_blog_building_process/" itemprop="url">my_blog_building_process</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-21T10:56:24+08:00">
+                2018-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="搭了两次blog，写下来加深印象"><a href="#搭了两次blog，写下来加深印象" class="headerlink" title="搭了两次blog，写下来加深印象"></a>搭了两次blog，写下来加深印象</h2><p>工具</p>
+<ul>
+<li>git</li>
+<li>github账号</li>
+<li>node.js</li>
+<li>hexo</li>
+</ul>
+<p>因为每个github账号都可以开一个自己的静态网站(github pages服务),简单还免费,只需要创建一个名称为username.github.io的repository。(username为你的账号名称)这个repository将储存你的blog的文件</p>
+<p>Git是一个版本工具，此处用来将你的修改推送到你的github上(需要使用SSh赋予你的电脑推送东西到github的权限)</p>
+<p>hexo博客生成工具，为什么用它，彬彬推荐的，我不懂hhh。它可以自动生成html+css+js，你不需要再去构造你blog的形状。</p>
+<p>node.js : 安装、使用hexo需要它,具体什么作用我不知道</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/21/my_blog_building_process/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
