@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://miao.su/images/2019/04/11/3ebb8d.jpg">
 <meta property="og:image" content="https://miao.su/images/2019/04/11/1a0fea.png">
 <meta property="og:image" content="https://miao.su/images/2019/04/11/20f222.png">
-<meta property="og:updated_time" content="2019-04-11T13:29:04.436Z">
+<meta property="og:updated_time" content="2019-04-11T14:15:53.666Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫初学">
 <meta name="twitter:description" content="学爬虫也有两三个星期了，今天准备总结一下 序言：好久没写blog了。一写就是4个小时呜呜呜，好累，但确实巩固了知识    照目前所学的知识，爬取数据可以分3种方法 1、使用BeautifulSoup库BeautifulSoup库可以轻松地解析Request库请求的页面，并把网页源代码解析为Soup文档，以便过滤器提取数据。 使用方法:12res = request.get(&amp;apos;url&amp;ap">
@@ -318,7 +318,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  1.8k
                 </span>
               
 
@@ -408,7 +408,7 @@
 <li>“ \ “是转义字符，例如” . “字符是匹配单个字符，但有时不需要这个功能，则” . “即表示点</li>
 <li>[…]为字符集，相当于在中括号中任选一个.例如a[bcd],匹配的结果为ab,ac,ad.</li>
 </ol>
-<p>太难敲了。。。还有预定义字符集，数量词，边界匹配，自行百度</p>
+<p><strong><em>太难敲了。。。还有预定义字符集，数量词，边界匹配，自行百度</em></strong></p>
 <p><strong>(.*?):</strong><br>“()”表示括号的内容作为返回结果.” .*? “是贪心算法，匹配任意字符</p>
 <p><strong>re模块</strong> : re模块有全部的正则表达式功能。</p>
 <p>1.search()函数: 匹配并提取第一个符合规律的内容，返回一个正则表达式对象<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">re.search(pattern, string, flags=0)</span><br></pre></td></tr></table></figure></p>
@@ -437,7 +437,8 @@
 <p>4.re模块修饰符：控制匹配的模式</p>
 <p>有 re.I, re.L, re.M, re.S, re.U, re.X</p>
 <p>仅介绍re.S:使匹配包括换行符在内的所以字符</p>
-<p>例如：提取\<div>指数\</div>中的文字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">a = &apos;&lt;div&gt;指数&lt;/div&gt;&apos;</span><br><span class="line">word = re.findall(&apos;&lt;div&gt;(.*?)&lt;/div&gt;&apos;, a)</span><br><span class="line">print(word)</span><br><span class="line"># 结果为</span><br><span class="line">[&apos;指数&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>例如：提取下面代码中的文字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\&lt;div&gt;指数\&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">a = &apos;&lt;div&gt;指数&lt;/div&gt;&apos;</span><br><span class="line">word = re.findall(&apos;&lt;div&gt;(.*?)&lt;/div&gt;&apos;, a)</span><br><span class="line">print(word)</span><br><span class="line"># 结果为</span><br><span class="line">[&apos;指数&apos;]</span><br></pre></td></tr></table></figure>
 <p>但如果字符串是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &apos;&apos;&apos;&lt;div&gt;指数</span><br><span class="line">&lt;/div&gt;&apos;&apos;&apos;</span><br><span class="line">则结果为</span><br><span class="line">[]</span><br></pre></td></tr></table></figure></p>
 <p>因为findall为逐行匹配，第一行没有匹配到数据时，就会从第二行开始重新匹配，这是便可以通过re.S进行跨行匹配<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">a = &apos;&apos;&apos;&lt;div&gt;指数</span><br><span class="line">&lt;/div&gt;&apos;&apos;&apos;</span><br><span class="line">word = re.findall(&apos;&lt;div&gt;(.*?)&lt;/div&gt;&apos;, a, re.S)</span><br><span class="line">print(word)</span><br><span class="line"># 结果为</span><br><span class="line">[&apos;指数\n&apos;]</span><br></pre></td></tr></table></figure></p>
 <h2 id="Lxml库与xpath语法"><a href="#Lxml库与xpath语法" class="headerlink" title="Lxml库与xpath语法"></a>Lxml库与xpath语法</h2><p>Lxml为XML解析库，也用来解析HTML.  Lxml库解析可以自动修正HTMl</p>
