@@ -84,21 +84,21 @@
 
 
 
-<meta name="description" content="学爬虫也有两三个星期了，今天准备总结一下 序言：好久没写blog了。一写就是4个小时呜呜呜，好累，但确实巩固了知识    照目前所学的知识，爬取数据可以分3种方法 1、使用BeautifulSoup库BeautifulSoup库可以轻松地解析Request库请求的页面，并把网页源代码解析为Soup文档，以便过滤器提取数据。 使用方法:12res = request.get(&amp;apos;url&amp;ap">
+<meta name="description" content="学爬虫也有两三个星期了，今天准备总结一下 序言：好久没写blog了。一写就是4个小时呜呜呜，好累，但确实巩固了知识    照目前所学的知识，爬取数据可以分3种方法 使用BeautifulSoup库BeautifulSoup库可以轻松地解析Request库请求的页面，并把网页源代码解析为Soup文档，以便过滤器提取数据。 使用方法:12res = request.get(&amp;apos;url&amp;apos">
 <meta name="keywords" content="Python，爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爬虫初学">
 <meta property="og:url" content="http://yoursite.com/2019/04/11/爬虫初学/index.html">
 <meta property="og:site_name" content="ljl&#39;s blog">
-<meta property="og:description" content="学爬虫也有两三个星期了，今天准备总结一下 序言：好久没写blog了。一写就是4个小时呜呜呜，好累，但确实巩固了知识    照目前所学的知识，爬取数据可以分3种方法 1、使用BeautifulSoup库BeautifulSoup库可以轻松地解析Request库请求的页面，并把网页源代码解析为Soup文档，以便过滤器提取数据。 使用方法:12res = request.get(&amp;apos;url&amp;ap">
+<meta property="og:description" content="学爬虫也有两三个星期了，今天准备总结一下 序言：好久没写blog了。一写就是4个小时呜呜呜，好累，但确实巩固了知识    照目前所学的知识，爬取数据可以分3种方法 使用BeautifulSoup库BeautifulSoup库可以轻松地解析Request库请求的页面，并把网页源代码解析为Soup文档，以便过滤器提取数据。 使用方法:12res = request.get(&amp;apos;url&amp;apos">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://miao.su/images/2019/04/11/3ebb8d.jpg">
 <meta property="og:image" content="https://miao.su/images/2019/04/11/1a0fea.png">
 <meta property="og:image" content="https://miao.su/images/2019/04/11/20f222.png">
-<meta property="og:updated_time" content="2019-04-11T14:15:53.666Z">
+<meta property="og:updated_time" content="2019-04-11T14:17:21.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫初学">
-<meta name="twitter:description" content="学爬虫也有两三个星期了，今天准备总结一下 序言：好久没写blog了。一写就是4个小时呜呜呜，好累，但确实巩固了知识    照目前所学的知识，爬取数据可以分3种方法 1、使用BeautifulSoup库BeautifulSoup库可以轻松地解析Request库请求的页面，并把网页源代码解析为Soup文档，以便过滤器提取数据。 使用方法:12res = request.get(&amp;apos;url&amp;ap">
+<meta name="twitter:description" content="学爬虫也有两三个星期了，今天准备总结一下 序言：好久没写blog了。一写就是4个小时呜呜呜，好累，但确实巩固了知识    照目前所学的知识，爬取数据可以分3种方法 使用BeautifulSoup库BeautifulSoup库可以轻松地解析Request库请求的页面，并把网页源代码解析为Soup文档，以便过滤器提取数据。 使用方法:12res = request.get(&amp;apos;url&amp;apos">
 <meta name="twitter:image" content="https://miao.su/images/2019/04/11/3ebb8d.jpg">
 
 
@@ -361,7 +361,7 @@
 <p><img src="https://miao.su/images/2019/04/11/3ebb8d.jpg" alt="猛虎落泪"></p>
 <hr>
 <p><em>照目前所学的知识，爬取数据可以分3种方法</em></p>
-<h2 id="1、使用BeautifulSoup库"><a href="#1、使用BeautifulSoup库" class="headerlink" title="1、使用BeautifulSoup库"></a>1、使用BeautifulSoup库</h2><p>BeautifulSoup库可以轻松地解析Request库请求的页面，并把网页源代码解析为Soup文档，以便过滤器提取数据。<br> 使用方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = request.get(&apos;url&apos;, headers=headers)</span><br><span class="line">soup = BeautifulSoup(res.text, &apos;lxml&apos;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用BeautifulSoup库"><a href="#使用BeautifulSoup库" class="headerlink" title="使用BeautifulSoup库"></a>使用BeautifulSoup库</h2><p>BeautifulSoup库可以轻松地解析Request库请求的页面，并把网页源代码解析为Soup文档，以便过滤器提取数据。<br> 使用方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = request.get(&apos;url&apos;, headers=headers)</span><br><span class="line">soup = BeautifulSoup(res.text, &apos;lxml&apos;)</span><br></pre></td></tr></table></figure></p>
 <p>soup的内容即为网站源码,lxml为解析器（还有别的解析器，推荐使用lxml）</p>
 <p>得到soup文档后，就可以使用find()、find_all()和selector()方法定位需要的元素了</p>
 <ul>
@@ -379,7 +379,7 @@
 </li>
 </ul>
 <p><img src="https://miao.su/images/2019/04/11/1a0fea.png" alt="1"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这时，soup的值即为[&lt;h1&gt;域名&lt;/h1&gt;],为一个列表,使用方法得到的也是列表</span><br><span class="line">     soup[0]即可转化为&lt;h1&gt;域名&lt;/h1&gt;</span><br><span class="line">     使用soup.get_text()可以获取标签中的文本消息</span><br><span class="line">     使用soup.get(&apos;属性&apos;)可以获取属性的值</span><br></pre></td></tr></table></figure></p>
-<h2 id="2、正则表达式"><a href="#2、正则表达式" class="headerlink" title="2、正则表达式"></a>2、正则表达式</h2><p>正则表达式可以匹配字符</p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>正则表达式可以匹配字符</p>
 <p>正则表达式的一般字符有3个</p>
 <table>
 <thead>
@@ -712,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学爬虫也有两三个星期了，今天准备总结一下"><span class="nav-number">1.</span> <span class="nav-text">学爬虫也有两三个星期了，今天准备总结一下</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、使用BeautifulSoup库"><span class="nav-number">1.1.</span> <span class="nav-text">1、使用BeautifulSoup库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、正则表达式"><span class="nav-number">1.2.</span> <span class="nav-text">2、正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lxml库与xpath语法"><span class="nav-number">1.3.</span> <span class="nav-text">Lxml库与xpath语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规律获取所爬网站的urls："><span class="nav-number">1.4.</span> <span class="nav-text">规律获取所爬网站的urls：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学爬虫也有两三个星期了，今天准备总结一下"><span class="nav-number">1.</span> <span class="nav-text">学爬虫也有两三个星期了，今天准备总结一下</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用BeautifulSoup库"><span class="nav-number">1.1.</span> <span class="nav-text">使用BeautifulSoup库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.2.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lxml库与xpath语法"><span class="nav-number">1.3.</span> <span class="nav-text">Lxml库与xpath语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规律获取所爬网站的urls："><span class="nav-number">1.4.</span> <span class="nav-text">规律获取所爬网站的urls：</span></a></li></ol></li></ol></div>
             
 
           </div>
