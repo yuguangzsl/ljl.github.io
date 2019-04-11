@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://miao.su/images/2019/04/11/3ebb8d.jpg">
 <meta property="og:image" content="https://miao.su/images/2019/04/11/1a0fea.png">
 <meta property="og:image" content="https://miao.su/images/2019/04/11/20f222.png">
-<meta property="og:updated_time" content="2019-04-11T13:12:38.408Z">
+<meta property="og:updated_time" content="2019-04-11T13:29:04.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫初学">
 <meta name="twitter:description" content="学爬虫也有两三个星期了，今天准备总结一下 序言：好久没写blog了。一写就是4个小时呜呜呜，好累，但确实巩固了知识    照目前所学的知识，爬取数据可以分3种方法 1、使用BeautifulSoup库BeautifulSoup库可以轻松地解析Request库请求的页面，并把网页源代码解析为Soup文档，以便过滤器提取数据。 使用方法:12res = request.get(&amp;apos;url&amp;ap">
@@ -380,7 +380,30 @@
 </ul>
 <p><img src="https://miao.su/images/2019/04/11/1a0fea.png" alt="1"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这时，soup的值即为[&lt;h1&gt;域名&lt;/h1&gt;],为一个列表,使用方法得到的也是列表</span><br><span class="line">     soup[0]即可转化为&lt;h1&gt;域名&lt;/h1&gt;</span><br><span class="line">     使用soup.get_text()可以获取标签中的文本消息</span><br><span class="line">     使用soup.get(&apos;属性&apos;)可以获取属性的值</span><br></pre></td></tr></table></figure></p>
 <h2 id="2、正则表达式"><a href="#2、正则表达式" class="headerlink" title="2、正则表达式"></a>2、正则表达式</h2><p>正则表达式可以匹配字符</p>
-<p>正则表达式的一般字符有3个<br>字符|含义<br>–|:–|<br>. | 匹配任意单个字符（不包括换行符\n）<br>\ | 转义字符（把有特殊含义的字符转化为字面意思）<br>[…] | 字符集。对应字符集中任意字符<br>说明：</p>
+<p>正则表达式的一般字符有3个</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td style="text-align:left">匹配任意单个字符（不包括换行符\n）</td>
+</tr>
+<tr>
+<td>\</td>
+<td style="text-align:left">转义字符（把有特殊含义的字符转化为字面意思）</td>
+</tr>
+<tr>
+<td>[…]</td>
+<td style="text-align:left">字符集。对应字符集中任意字符</td>
+</tr>
+</tbody>
+</table>
+<p>说明：</p>
 <ol>
 <li>“ \ “是转义字符，例如” . “字符是匹配单个字符，但有时不需要这个功能，则” . “即表示点</li>
 <li>[…]为字符集，相当于在中括号中任选一个.例如a[bcd],匹配的结果为ab,ac,ad.</li>
@@ -421,7 +444,100 @@
 <p>爬虫使用Lxml中的etree库，利用etree.HTML进行初始化，初始化后便能使用Xpath语法查找信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from lxml import etree</span><br></pre></td></tr></table></figure></p>
 <p>Xpath语法是一门在XML文档中查找信息的语言，也支持查找HTML</p>
 <p>在Xpath中，最重要的是节点的选择</p>
-<p>1.节点选择实例<br>表达式|描述<br>–|–<br>nodename | 选择此节点的所以子节点<br>/ | 从根节点选取<br>// | 从匹配选择的当前节点选择文档中的节点，而不考虑他们的位置<br>. | 选取当前节点<br>.. | 选取当前节点的父节点<br>@ | 选取属性<br>2.节点选择实例<br>路径表达式|结果<br>-|-<br>user_database|选取元素user_database的所有子节点<br>/user_database|选取根元素user_database  #假如路径起始于/，则此路径始终代表到某元素的绝对路径<br>user_database/user|选取属于user_database的子元素的所有user元素<br>//user|选取所有user子元素，而不管他们在文档中的位置<br>user_database//user| 选择属于user_database元素的后代的所有user元素，而不管他们位于user_database之下的什么位置<br>//@attribute|选取名为attribute的所有属性<br>3.谓语：用来查找某个特定的节点或包含某个指定值的节点，谓语被嵌在方括号中<br>路径表达式|结果<br>-|-<br>/user_database/user[1]|选取属于user_database子元素的第一个user元素<br>//li[@attribute]|选取所有拥有名为attribute属性的li元素<br>//li[@attritube=’red’]|选取所有的li元素，且这些元素拥有值为red的attribute属性<br>Xpath中也可以使用通配符来选取位置的元素，常用的” * “通配符，它可以匹配任何元素节点</p>
+<p>1.节点选择实例</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodename</td>
+<td>选择此节点的所以子节点</td>
+</tr>
+<tr>
+<td>/</td>
+<td>从根节点选取</td>
+</tr>
+<tr>
+<td>//</td>
+<td>从匹配选择的当前节点选择文档中的节点，而不考虑他们的位置</td>
+</tr>
+<tr>
+<td>.</td>
+<td>选取当前节点</td>
+</tr>
+<tr>
+<td>..</td>
+<td>选取当前节点的父节点</td>
+</tr>
+<tr>
+<td>@</td>
+<td>选取属性</td>
+</tr>
+</tbody>
+</table>
+<p>2.节点选择实例</p>
+<table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_database</td>
+<td>选取元素user_database的所有子节点</td>
+</tr>
+<tr>
+<td>/user_database</td>
+<td>选取根元素user_database  #假如路径起始于/，则此路径始终代表到某元素的绝对路径</td>
+</tr>
+<tr>
+<td>user_database/user</td>
+<td>选取属于user_database的子元素的所有user元素</td>
+</tr>
+<tr>
+<td>//user</td>
+<td>选取所有user子元素，而不管他们在文档中的位置</td>
+</tr>
+<tr>
+<td>user_database//user</td>
+<td>选择属于user_database元素的后代的所有user元素，而不管他们位于user_database之下的什么位置</td>
+</tr>
+<tr>
+<td>//@attribute</td>
+<td>选取名为attribute的所有属性</td>
+</tr>
+</tbody>
+</table>
+<p>3.谓语：用来查找某个特定的节点或包含某个指定值的节点，谓语被嵌在方括号中</p>
+<table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/user_database/user[1]</td>
+<td>选取属于user_database子元素的第一个user元素</td>
+</tr>
+<tr>
+<td>//li[@attribute]</td>
+<td>选取所有拥有名为attribute属性的li元素</td>
+</tr>
+<tr>
+<td>//li[@attritube=’red’]</td>
+<td>选取所有的li元素，且这些元素拥有值为red的attribute属性</td>
+</tr>
+</tbody>
+</table>
+<p>Xpath中也可以使用通配符来选取位置的元素，常用的” * “通配符，它可以匹配任何元素节点</p>
 <p>Xpath路径可以通过下图方式获得</p>
 <p><img src="https://miao.su/images/2019/04/11/20f222.png" alt="2"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res = request.get(url, header=header)</span><br><span class="line">selector = etree.HTML(res.text)</span><br><span class="line">a = selector.xpath(&apos;/html/body/div[3]/div[2]/div/div[2]/dl[1]/dd/h1/text()&apos;)</span><br></pre></td></tr></table></figure></p>
 <p>/text()可以获取标签中的文字信息，返回的数据为列表结构，可以通过切片即加[0]获取为字符串数据结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = selector.xpath(&apos;/html/body/div[3]/div[2]/div/div[2]/dl[1]/dd/h1/text()&apos;)[0]</span><br></pre></td></tr></table></figure></p>
